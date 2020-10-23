@@ -1,0 +1,12 @@
+.wrapper {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.form-wrapper {
+	width: 50%;
+	margin: 2em auto;
+}
