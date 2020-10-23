@@ -51,4 +51,4 @@ $_SESSION['questionIndex'] = 0;
 
 $conn->close();
 
-header('Location: includes/question.php');
+header('Location: question.php');
