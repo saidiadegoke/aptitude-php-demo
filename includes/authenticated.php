@@ -1,7 +1,10 @@
 <?php
 
 //check login page
-session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
 
 if(!$_SESSION['loggedIn'] || $_SESSION['loggedIn'] != 'yes') {
 	header('Location: login.php');

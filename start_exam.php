@@ -48,6 +48,7 @@ $_SESSION['questions'] = $questions;
 $_SESSION['exam_id'] = $examId;
 $_SESSION['exam'] = $exam;
 $_SESSION['questionIndex'] = 0;
+$_SESSION['answers'] = [];
 
 $conn->close();
 

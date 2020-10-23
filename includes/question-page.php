@@ -30,6 +30,9 @@
     </p>
   </div>
   <div class="form-group">
+  	<input type="hidden" name="question_id" value="<?= $question['id'] ?>">
+  	<input type="hidden" name="option_id" value="<?= $option['id'] ?>">
+  	<input type="hidden" name="user_id" value="<?= $user['id'] ?>">
     <button type="submit" class="btn btn-outline-info"><?= $label ?></button>
   </div>
 

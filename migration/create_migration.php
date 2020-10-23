@@ -435,6 +435,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `exams` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `question_id` int NOT NULL,
   `option_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `created_at` datetime NOT NULL
 );";
 
