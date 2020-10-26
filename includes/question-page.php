@@ -21,7 +21,7 @@
     		echo '<div class="form-check">
   <input class="form-check-input" type="radio" name="question' . $option['question_id'] . '" id="question' . $option['id'] . '" value="' . $option['id'] . '">
   <label class="form-check-label" for="exampleRadios1">
-    "' . $option['option'] . '"
+    ' . $option['option'] . '
   </label>
 </div>';
     	}

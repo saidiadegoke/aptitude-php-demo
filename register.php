@@ -14,8 +14,6 @@
   <body>
     <div class="container">
 
-      
-
       <div class="row">
         <form class="form-wrapper" action="register_process.php" method="post">
           <h4>Register form</h4>

@@ -19,7 +19,7 @@ $page = $content?: 'start.php';
     <div class="dashboard">
       <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="dashboard.php">Dashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,9 +37,8 @@ $page = $content?: 'start.php';
           <?php echo $user['email'] ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Upload documents</a>
-          <a class="dropdown-item" href="#">My Exams</a>
-          <a class="dropdown-item" href="#">My Results</a>
+          <a class="dropdown-item" href="exam.php">Take Exam</a>
+          <a class="dropdown-item" href="view-results.php">My Results</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="includes/logout_process.php">Logout</a>
         </div>

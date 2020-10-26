@@ -13,7 +13,7 @@ We automatically grade and rank your candidates. In the time it takes to savor a
 
 Our screening process automation lets you focus on the best people for the job.</p>
 <p>
-  <a href="exam.php" class="btn btn-outline-primary">Take exams</a>&nbsp;&nbsp;<a href="#" class="btn btn-outline-info">View results</a>
+  <a href="exam.php" class="btn btn-outline-primary">Take exams</a>&nbsp;&nbsp;<a href="view-results.php" class="btn btn-outline-info">View results</a>
 </p>
       </div>
 </div>

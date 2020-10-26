@@ -7,7 +7,7 @@ if($conn->connect_error) {
 	exit('Couldn\'t connect to the Db');
 }
 
-$tranc =  "DROP tables IF EXISTS subjects, questions, options, answers, exams";
+$tranc =  "DROP tables IF EXISTS subjects, questions, options, answers, exams, attempts";
 if(!$conn->query($tranc)) {
 	exit("Error: " . $conn->error);
 }
@@ -436,6 +436,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `exams` (
   `question_id` int NOT NULL,
   `option_id` int NOT NULL,
   `user_id` int NOT NULL,
+  `attempt_id` int NOT NULL,
   `created_at` datetime NOT NULL
 );";
 
@@ -451,6 +452,17 @@ $sql = "CREATE TABLE IF NOT EXISTS `users` (
    phone VARCHAR(15) NULL, 
    gender VARCHAR(10) NULL, 
    created_at date NULL
+);";
+
+if ($conn->query($sql) !== TRUE) {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$sql = "CREATE TABLE IF NOT EXISTS `attempts` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `exam_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `created_at` datetime NOT NULL
 );";
 
 if ($conn->query($sql) !== TRUE) {
