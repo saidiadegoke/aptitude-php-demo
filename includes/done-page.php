@@ -7,7 +7,7 @@
  
   <div class="form-group">
     <a href="dashboard.php" class="btn btn-outline-info">Dashboard</a>
-    <a href="view-results.php" class="btn btn-outline-info">View Results</a>
+    <a href="view-result-details.php?attempt_id=<?= $_GET['attempt_id'] ?>" class="btn btn-outline-info">View Results</a>
   </div>
 
       </div>

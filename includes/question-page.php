@@ -19,8 +19,8 @@
 
     	foreach($options as $option) {
     		echo '<div class="form-check">
-  <input class="form-check-input" type="radio" name="question' . $option['question_id'] . '" id="question' . $option['id'] . '" value="' . $option['id'] . '">
-  <label class="form-check-label" for="exampleRadios1">
+  <input class="form-check-input" type="radio" name="option_id" id="question' . $option['id'] . '" value="' . $option['id'] . '">
+  <label class="form-check-label" for="question' . $option['id'] . '">
     ' . $option['option'] . '
   </label>
 </div>';
@@ -31,7 +31,7 @@
   </div>
   <div class="form-group">
   	<input type="hidden" name="question_id" value="<?= $question['id'] ?>">
-  	<input type="hidden" name="option_id" value="<?= $option['id'] ?>">
+  	<input type="hidden" name="option_id0" value="<?= $option['id'] ?>">
   	<input type="hidden" name="user_id" value="<?= $user['id'] ?>">
     <button type="submit" class="btn btn-outline-info"><?= $label ?></button>
   </div>

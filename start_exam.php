@@ -11,6 +11,7 @@ if(!$_POST['exam_id']) {
 }
 
 $examId = $_POST['exam_id'];
+$user = $_SESSION['user'];
 
 // Connect to the database
 $conn = new mysqli('localhost', 'root', 'mysql', 'aptitude_test');
@@ -48,7 +49,15 @@ $_SESSION['questions'] = $questions;
 $_SESSION['exam_id'] = $examId;
 $_SESSION['exam'] = $exam;
 $_SESSION['questionIndex'] = 0;
-$_SESSION['answers'] = [];
+$answers = [];
+foreach($questions as $question) {
+	$answers[$question['id']] = [
+		'question_id' => $question['id'],
+		'option_id' => 0,
+		'user_id' => $user['id']
+	];
+}
+$_SESSION['answers'] = $answers;
 
 $conn->close();
 

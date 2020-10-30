@@ -14,7 +14,11 @@ if($conn->connect_error) {
 	exit('Couldn\'t connect to the Db');
 }
 
-if($_SESSION['questionIndex'] + 1 >= count($_SESSION['questions'])) {
+if(intval($_SESSION['questionIndex']) >= count($_SESSION['questions'])) {
+	if($_POST['question_id'] && $_POST['option_id'] && $_POST['user_id']) {
+		$_SESSION['answers'][$_POST['question_id']]['option_id'] = $_POST['option_id'];
+	}
+
 	$examId = $exam['id'];
 	$uId = $user['id'];
 	$createAt = date('Y-m-d H:i:s');
@@ -39,7 +43,7 @@ if($_SESSION['questionIndex'] + 1 >= count($_SESSION['questions'])) {
 				exit("Error: " . $conn->error);
 			}
 		}
-		header('Location: done.php');
+		header('Location: done.php?attempt_id=' . $attemptId);
 		exit("Process the answer");
 	} else {
 		header('Location: exam.php?error=Exam result couldn\'t be processed. Please retry!');
@@ -48,11 +52,7 @@ if($_SESSION['questionIndex'] + 1 >= count($_SESSION['questions'])) {
 }
 
 if($_POST['question_id'] && $_POST['option_id'] && $_POST['user_id']) {
-	$_SESSION['answers'][$_POST['question_id']] = [
-		'question_id' => $_POST['question_id'],
-		'option_id' => $_POST['option_id'],
-		'user_id' => $_POST['user_id']
-	];
+	$_SESSION['answers'][$_POST['question_id']]['option_id'] = $_POST['option_id'];
 }
 
 $sql = "SELECT * FROM options WHERE question_id='$questionId'";
@@ -78,7 +78,7 @@ if(!$questions || !$exam) {
 
 $_SESSION['questionIndex'] = $_SESSION['questionIndex'] + 1;
 
-if(count($_SESSION['questions']) > $_SESSION['questionIndex'] + 1) {
+if(intval($_SESSION['questionIndex']) < count($_SESSION['questions']) ) {
 	$label = 'Next';
 } else {
 	$label = 'Finish';
