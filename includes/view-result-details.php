@@ -20,7 +20,7 @@
 			echo $result['question'];
 			echo '</td>';
 			echo '<td>';
-			echo $result['option'];
+			echo $result['option']? $result['option']: 'Not attempted';
 			echo '</td>';
 			echo '<td>';
 			echo $result['answer'] == 1? "Correct": "Wrong";
