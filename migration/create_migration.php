@@ -409,7 +409,7 @@ one-party system is that it –',
 
 
 foreach($questions as $question) {
-	$sql = "INSERT INTO questions (question, subject_id, instruction) VALUES ('" . $question['question'] . "', '" . $question['subject_id'] . "', '" . $question['subject_id'] . "');";
+	$sql = "INSERT INTO questions (question, subject_id, instruction) VALUES ('" . $question['question'] . "', '" . $question['subject_id'] . "', '" . $question['instruction'] . "');";
 	if ($conn->query($sql) !== TRUE) {
 	  exit( "Error: " . $sql . "<br>" . $conn->error);
 	}

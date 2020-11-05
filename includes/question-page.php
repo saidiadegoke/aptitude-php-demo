@@ -9,9 +9,15 @@
           <?php endif ?>
           
   <div class="form-group">
+    <?php if($question['instruction']) { ?>
+      <p>
+        <?= $question['instruction'] ?>
+      </p>
+   <?php } ?>
     <p class="lead">
     	<?php echo $question['question']; ?>
     </p>
+    
   </div>
   <div class="form-group">
     <p>
